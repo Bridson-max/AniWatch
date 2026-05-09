@@ -444,7 +444,7 @@ function playEp(ep, btn) {
   // STEP 4: Per-episode video lookup with fallback to default
   const videoId = episodeVideos[ep] || episodeVideos.default;
 
-  const src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+  const src = `https://www.anistream.online/embed/${videoId}?autoplay=1`;
 
   wrap.innerHTML = `
     <iframe
