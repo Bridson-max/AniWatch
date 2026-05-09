@@ -19,6 +19,8 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; min-height: 100vh; }
+  
+  /* NAV */
   nav { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
   .logo { font-size: 1.5rem; font-weight: 800; background: linear-gradient(135deg, var(--accent2), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; cursor: pointer; }
   .nav-links { display: flex; gap: 20px; }
@@ -27,6 +29,8 @@
   .search-bar { display: flex; align-items: center; background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 6px 12px; gap: 8px; width: 260px; }
   .search-bar input { background: none; border: none; outline: none; color: var(--text); font-size: 0.9rem; width: 100%; }
   .search-bar svg { color: var(--muted); flex-shrink: 0; }
+
+  /* HERO */
   .hero { position: relative; height: 460px; overflow: hidden; display: flex; align-items: flex-end; }
   .hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center top; transition: all 0.6s; }
   .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,10,15,0.98) 30%, rgba(10,10,15,0.4) 100%), linear-gradient(to top, rgba(10,10,15,1) 0%, transparent 60%); }
@@ -44,12 +48,16 @@
   .hero-dots { position: absolute; bottom: 20px; right: 32px; display: flex; gap: 6px; z-index: 3; }
   .hero-dots span { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); cursor: pointer; transition: background 0.2s; }
   .hero-dots span.active { background: var(--accent2); }
+
+  /* SECTIONS */
   main { padding: 0 24px; }
   .section { margin: 32px 0; }
   .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
   .section-title { font-size: 1.15rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
   .section-title::before { content: ''; width: 4px; height: 18px; background: linear-gradient(to bottom, var(--accent), var(--pink)); border-radius: 2px; display: block; }
   .see-all { color: var(--accent2); font-size: 0.82rem; cursor: pointer; }
+
+  /* ANIME GRID */
   .anime-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; }
   .anime-card { background: var(--card); border-radius: var(--radius); overflow: hidden; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; position: relative; }
   .anime-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(124,58,237,0.3); }
@@ -59,19 +67,26 @@
   .anime-card .card-ep { font-size: 0.72rem; color: var(--muted); margin-top: 3px; }
   .anime-card .card-score { position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,0.75); color: #facc15; font-size: 0.7rem; font-weight: 700; padding: 2px 6px; border-radius: 4px; }
   .anime-card .card-type { position: absolute; top: 8px; left: 8px; background: var(--accent); color: #fff; font-size: 0.62rem; font-weight: 700; padding: 2px 6px; border-radius: 4px; letter-spacing: 0.5px; }
+
+  /* HORIZONTAL SCROLL */
   .h-scroll { display: flex; gap: 14px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
   .h-scroll::-webkit-scrollbar { height: 4px; }
   .h-scroll::-webkit-scrollbar-track { background: transparent; }
   .h-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
   .h-scroll .anime-card { min-width: 148px; flex-shrink: 0; }
+
+  /* GENRES */
   .genre-pills { display: flex; gap: 8px; flex-wrap: wrap; }
   .genre-pill { background: var(--card); border: 1px solid var(--border); color: var(--muted); padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; }
   .genre-pill:hover { border-color: var(--accent2); color: var(--accent2); }
   .genre-pill.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  /* WATCH VIEW */
   .watch-view { display: none; }
   .watch-view.visible { display: block; }
   .home-view { display: block; }
   .home-view.hidden { display: none; }
+
   .watch-hero { display: grid; grid-template-columns: 1fr 320px; gap: 20px; padding: 20px 0; }
   .player-wrap { background: #000; border-radius: var(--radius); overflow: hidden; aspect-ratio: 16/9; position: relative; }
   .player-wrap iframe { width: 100%; height: 100%; border: none; }
@@ -82,19 +97,32 @@
   .watch-meta { display: flex; gap: 10px; flex-wrap: wrap; font-size: 0.78rem; color: var(--muted); }
   .watch-synopsis { font-size: 0.83rem; color: var(--muted); line-height: 1.65; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; cursor: pointer; margin-top: 10px; }
   .watch-synopsis.expanded { -webkit-line-clamp: unset; }
+  
+  /* EPISODES */
   .ep-list-header { font-size: 0.9rem; font-weight: 700; margin-bottom: 10px; }
   .ep-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); gap: 6px; max-height: 280px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
   .ep-btn { background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 8px 4px; border-radius: 6px; font-size: 0.78rem; font-weight: 600; cursor: pointer; text-align: center; transition: all 0.2s; }
   .ep-btn:hover { border-color: var(--accent2); color: var(--accent2); }
   .ep-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  /* SEARCH RESULTS */
   .search-view { display: none; }
   .search-view.visible { display: block; }
+
   .page-title { font-size: 1.4rem; font-weight: 800; margin: 24px 0 18px; }
   .results-count { color: var(--muted); font-size: 0.85rem; margin-bottom: 16px; }
+
+  /* LOADING */
   .skeleton { background: linear-gradient(90deg, var(--card) 25%, var(--border) 50%, var(--card) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: var(--radius); }
   @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+  .sk-card { aspect-ratio: 2/3; border-radius: var(--radius); }
+  .sk-hero { height: 460px; }
+
+  /* TOAST */
   .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 10px 20px; border-radius: 8px; font-size: 0.85rem; z-index: 999; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
   .toast.show { opacity: 1; }
+
+  /* RESPONSIVE */
   @media(max-width:768px){
     .watch-hero { grid-template-columns: 1fr; }
     .nav-links { display: none; }
@@ -122,6 +150,7 @@
 </nav>
 
 <div class="home-view" id="homeView">
+  <!-- HERO -->
   <div class="hero" id="heroSection">
     <div class="hero-bg" id="heroBg"></div>
     <div class="hero-overlay"></div>
@@ -134,10 +163,13 @@
   </div>
 
   <main>
+    <!-- GENRES -->
     <div class="section">
       <div class="section-header"><div class="section-title">Browse by Genre</div></div>
       <div class="genre-pills" id="genrePills"></div>
     </div>
+
+    <!-- TRENDING -->
     <div class="section">
       <div class="section-header">
         <div class="section-title">🔥 Trending Now</div>
@@ -145,6 +177,8 @@
       </div>
       <div class="h-scroll" id="trendingRow"></div>
     </div>
+
+    <!-- SEASONAL -->
     <div class="section">
       <div class="section-header">
         <div class="section-title">📅 This Season</div>
@@ -152,6 +186,8 @@
       </div>
       <div class="h-scroll" id="seasonalRow"></div>
     </div>
+
+    <!-- TOP RATED -->
     <div class="section">
       <div class="section-header">
         <div class="section-title">⭐ Top Rated</div>
@@ -193,6 +229,7 @@
         </div>
       </div>
     </div>
+
     <div class="section">
       <div class="section-header"><div class="section-title">More Like This</div></div>
       <div class="h-scroll" id="recommendedRow"></div>
@@ -237,14 +274,6 @@ let lastQuery = '';
 let filterPage = 1;
 let lastFilter = '';
 let lastFilterType = '';
-
-// ---- STEP 1: EPISODE VIDEO MAP ----
-const episodeVideos = {
-  1: "QktQUO6gCAM",
-  2: "QktQUO6gCAM",
-  3: "QktQUO6gCAM",
-  default: "QktQUO6gCAM"
-};
 
 // ---- JIKAN RATE LIMIT QUEUE ----
 const reqQueue = [];
@@ -322,7 +351,7 @@ function showHero(i) {
   document.querySelectorAll('.hero-dots span').forEach((s,j) => s.classList.toggle('active', j===i));
 }
 
-// ---- CARDS ----
+// ---- ROWS ----
 function animeCard(a) {
   const img = a.images?.jpg?.image_url || '';
   const score = a.score ? `<div class="card-score">★ ${a.score}</div>` : '';
@@ -402,7 +431,7 @@ async function openWatch(id) {
 
   document.getElementById('watchTitle').textContent = a.title;
   document.getElementById('watchMeta').innerHTML = `
-    <span style="color:#facc15;font-weight:700">★ ${a.score || 'N/A'}</span>
+    <span class="score" style="color:#facc15;font-weight:700">★ ${a.score || 'N/A'}</span>
     <span>${a.type || 'TV'}</span>
     <span>${a.episodes ? a.episodes + ' eps' : 'Ongoing'}</span>
     <span>${a.year || ''}</span>
@@ -411,15 +440,17 @@ async function openWatch(id) {
   `;
   document.getElementById('watchSynopsis').textContent = a.synopsis || '';
 
+  // Episodes
   const totalEps = a.episodes || 26;
   const epHtml = Array.from({length: Math.min(totalEps, 150)}, (_,i) =>
     `<button class="ep-btn ${i===0?'active':''}" onclick="playEp(${i+1}, this)">${i+1}</button>`
   ).join('');
   document.getElementById('epGrid').innerHTML = epHtml || '<p style="color:var(--muted);font-size:0.8rem;">Episode list unavailable</p>';
 
-  // Auto-play ep 1
+  // Play ep 1 immediately
   playEp(1, document.querySelector('.ep-btn'));
 
+  // Related
   const rd = await jikan(`/anime/${id}/recommendations`);
   const related = (rd.data||[]).slice(0,5);
   document.getElementById('relatedList').innerHTML = related.map(r => `
@@ -428,31 +459,28 @@ async function openWatch(id) {
       <div style="font-size:0.78rem;font-weight:600;line-height:1.3;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;">${r.entry.title}</div>
     </div>`).join('');
 
+  // Recommended row
   document.getElementById('recommendedRow').innerHTML = related.slice(0,8).map(r => animeCard({...r.entry})).join('');
+
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-// ---- STEP 2: UPDATED playEp() — YouTube embed ----
 function playEp(ep, btn) {
   currentEp = ep;
-
   document.querySelectorAll('.ep-btn').forEach(b => b.classList.remove('active'));
   if (btn) btn.classList.add('active');
 
   const wrap = document.getElementById('playerWrap');
+  if (!currentAnime) return;
 
-  // STEP 4: Per-episode video lookup with fallback to default
-  const videoId = episodeVideos[ep] || episodeVideos.default;
+  // Use gogoanime embed via AllAnime / embed.su / vidsrc
+  const titleSlug = currentAnime.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  const malId = currentAnime.mal_id;
 
-  const src = `https://www.anistream.online/embed/${videoId}?autoplay=1`;
-
+  // Try multiple embed sources - let user pick
+  const src = `https://www.anistream.online/embed/${malId}/${ep}`;
   wrap.innerHTML = `
-    <iframe
-      src="${src}"
-      allowfullscreen
-      frameborder="0"
-      allow="autoplay; encrypted-media; picture-in-picture">
-    </iframe>
+    <iframe src="${src}" allowfullscreen scrolling="no" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture"></iframe>
   `;
 }
 
